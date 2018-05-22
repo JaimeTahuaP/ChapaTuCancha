@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:55332/ServicioNegocio.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:55332/ServicioNegocio.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:55332/ServicioNegocio.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfServicio" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServicioNegocio_RegistrarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IServicioNegocio_RegistrarUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioNegocio_EnviarCorreoConfimacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarCorreoConfimacion" />
+  </wsdl:message>
+  <wsdl:message name="IServicioNegocio_EnviarCorreoConfimacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarCorreoConfimacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioNegocio_ListarTipoUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarTipoUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IServicioNegocio_ListarTipoUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarTipoUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioNegocio_ListarTipoDocumento_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarTipoDocumento" />
+  </wsdl:message>
+  <wsdl:message name="IServicioNegocio_ListarTipoDocumento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarTipoDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioNegocio_ListarDistritos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarDistritos" />
+  </wsdl:message>
+  <wsdl:message name="IServicioNegocio_ListarDistritos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarDistritosResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServicioNegocio">
+    <wsdl:operation name="RegistrarUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioNegocio/RegistrarUsuario" message="tns:IServicioNegocio_RegistrarUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioNegocio/RegistrarUsuarioResponse" message="tns:IServicioNegocio_RegistrarUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnviarCorreoConfimacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioNegocio/EnviarCorreoConfimacion" message="tns:IServicioNegocio_EnviarCorreoConfimacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioNegocio/EnviarCorreoConfimacionResponse" message="tns:IServicioNegocio_EnviarCorreoConfimacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarTipoUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioNegocio/ListarTipoUsuario" message="tns:IServicioNegocio_ListarTipoUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioNegocio/ListarTipoUsuarioResponse" message="tns:IServicioNegocio_ListarTipoUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarTipoDocumento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioNegocio/ListarTipoDocumento" message="tns:IServicioNegocio_ListarTipoDocumento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioNegocio/ListarTipoDocumentoResponse" message="tns:IServicioNegocio_ListarTipoDocumento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarDistritos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioNegocio/ListarDistritos" message="tns:IServicioNegocio_ListarDistritos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioNegocio/ListarDistritosResponse" message="tns:IServicioNegocio_ListarDistritos_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServicioNegocio" type="tns:IServicioNegocio">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RegistrarUsuario">
+      <soap:operation soapAction="http://tempuri.org/IServicioNegocio/RegistrarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarCorreoConfimacion">
+      <soap:operation soapAction="http://tempuri.org/IServicioNegocio/EnviarCorreoConfimacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarTipoUsuario">
+      <soap:operation soapAction="http://tempuri.org/IServicioNegocio/ListarTipoUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarTipoDocumento">
+      <soap:operation soapAction="http://tempuri.org/IServicioNegocio/ListarTipoDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarDistritos">
+      <soap:operation soapAction="http://tempuri.org/IServicioNegocio/ListarDistritos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IServicioNegocio" binding="tns:BasicHttpBinding_IServicioNegocio">
+      <soap:address location="http://localhost:55332/ServicioNegocio.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

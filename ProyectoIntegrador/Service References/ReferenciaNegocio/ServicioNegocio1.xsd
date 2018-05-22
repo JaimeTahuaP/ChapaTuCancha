@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WcfServicio" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WcfServicio" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="TB_USUARIO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="APE_USU" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COD_USU" type="xs:int" />
+      <xs:element minOccurs="0" name="EMAIL_USU" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID_DISTRITO" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_DOC" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_ESTADO" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_TIPO_USU" type="xs:int" />
+      <xs:element minOccurs="0" name="LOGIN_USU" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOM_USU" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_CONTACTO_USU" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUM_DOC_USU" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PASSWORD_USU" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TB_USUARIO" nillable="true" type="tns:TB_USUARIO" />
+  <xs:complexType name="ArrayOfTB_TIPO_USUARIO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TB_TIPO_USUARIO" nillable="true" type="tns:TB_TIPO_USUARIO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTB_TIPO_USUARIO" nillable="true" type="tns:ArrayOfTB_TIPO_USUARIO" />
+  <xs:complexType name="TB_TIPO_USUARIO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DES_TIPO_USU" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID_TIPO_USU" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TB_TIPO_USUARIO" nillable="true" type="tns:TB_TIPO_USUARIO" />
+  <xs:complexType name="ArrayOfTB_TIPO_DOCUMENTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TB_TIPO_DOCUMENTO" nillable="true" type="tns:TB_TIPO_DOCUMENTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTB_TIPO_DOCUMENTO" nillable="true" type="tns:ArrayOfTB_TIPO_DOCUMENTO" />
+  <xs:complexType name="TB_TIPO_DOCUMENTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DES_DOC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID_DOC" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TB_TIPO_DOCUMENTO" nillable="true" type="tns:TB_TIPO_DOCUMENTO" />
+  <xs:complexType name="ArrayOfTB_DISTRITO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TB_DISTRITO" nillable="true" type="tns:TB_DISTRITO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTB_DISTRITO" nillable="true" type="tns:ArrayOfTB_DISTRITO" />
+  <xs:complexType name="TB_DISTRITO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID_DISTRITO" type="xs:int" />
+      <xs:element minOccurs="0" name="NOM_DISTRITO" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TB_DISTRITO" nillable="true" type="tns:TB_DISTRITO" />
+</xs:schema>
